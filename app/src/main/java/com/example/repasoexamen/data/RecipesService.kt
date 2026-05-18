@@ -11,6 +11,9 @@ interface RecipesService {
     @GET("recipes")
     suspend fun getRecipesList() : RecipeResponse
 
+    @GET("recipes/search")
+    suspend fun getRecipesListByName(@Query("q") query: String) : RecipeResponse
+
     @GET("recipes/{recipe-id}")
     suspend fun getRecipeById(@Path("recipe-id") id: Int) : Recipe
 

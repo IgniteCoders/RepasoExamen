@@ -44,13 +44,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerView.adapter = adapter
 
+        binding.searchBar.setOnQueryTextSubmitListener { query ->
+            search(query)
+        }
 
         search()
     }
 
-    fun search() {
+    fun search(query: String = "") {
         CoroutineScope(Dispatchers.IO).launch {
-            recipeList = RecipesService.getInstance().getRecipesList().recipes
+            recipeList = RecipesService.getInstance().getRecipesListByName(query).recipes
 
             //Log.i("API", recipeList.toString())
 

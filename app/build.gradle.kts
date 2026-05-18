@@ -48,6 +48,9 @@ dependencies {
     // Picasso
     implementation("com.squareup.picasso:picasso:2.8")
 
+    // SearchBarView
+    implementation("com.github.IgniteCoders:SearchBarView:1.0.2")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

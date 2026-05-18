@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RepasoExamen</string>
+
+    <string name="activity_main_searchbar_hint">Search recipes…</string>
 </resources>
