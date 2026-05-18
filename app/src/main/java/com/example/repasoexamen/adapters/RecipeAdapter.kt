@@ -8,7 +8,7 @@ import com.example.repasoexamen.data.Recipe
 import com.example.repasoexamen.databinding.ItemRecipeBinding
 import com.squareup.picasso.Picasso
 
-class RecipeAdapter(var items: List<Recipe>, val onClick: (Int) -> Unit) : RecyclerView.Adapter<RecipeViewHolder>() {
+class RecipeAdapter(var items: List<Recipe>, val onClick: (position: Int) -> Unit) : RecyclerView.Adapter<RecipeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

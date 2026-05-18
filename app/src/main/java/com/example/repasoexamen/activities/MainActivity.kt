@@ -1,5 +1,6 @@
 package com.example.repasoexamen.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -39,7 +40,13 @@ class MainActivity : AppCompatActivity() {
 
         adapter = RecipeAdapter(recipeList) { position ->
             val recipe = recipeList[position]
-            Toast.makeText(this, recipe.name, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this, recipe.name, Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_RECIPE_ID, recipe.id)
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
         }
 
         binding.recyclerView.adapter = adapter
